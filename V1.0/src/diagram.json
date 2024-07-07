@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Jayamadu Gammune",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": 99.82,
+      "left": -103.28,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "imu1:GND", "esp:GND.1", "black", [ "h8.76", "v-0.52" ] ],
+    [ "imu1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "esp:22", "imu1:SCL", "green", [ "h0" ] ],
+    [ "esp:21", "imu1:SDA", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
